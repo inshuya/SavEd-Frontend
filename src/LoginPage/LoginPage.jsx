@@ -6,11 +6,11 @@ import { userActions } from '../_actions';
 
 function LoginPage() {
     const [inputs, setInputs] = useState({
-        username: '',
+        email: '',
         password: ''
     });
     const [submitted, setSubmitted] = useState(false);
-    const { username, password } = inputs;
+    const { email, password } = inputs;
     const loggingIn = useSelector(state => state.authentication.loggingIn);
     const dispatch = useDispatch();
     const location = useLocation();
@@ -29,10 +29,10 @@ function LoginPage() {
         e.preventDefault();
 
         setSubmitted(true);
-        if (username && password) {
+        if (email && password) {
             // get return url from location state or default to home page
             const { from } = location.state || { from: { pathname: "/" } };
-            dispatch(userActions.login(username, password, from));
+            dispatch(userActions.login(email, password, from));
         }
     }
 
@@ -41,10 +41,10 @@ function LoginPage() {
             <h2>Login</h2>
             <form name="form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" value={username} onChange={handleChange} className={'form-control' + (submitted && !username ? ' is-invalid' : '')} />
-                    {submitted && !username &&
-                        <div className="invalid-feedback">Username is required</div>
+                    <label>Email Id</label>
+                    <input type="text" name="email" value={email} onChange={handleChange} className={'form-control' + (submitted && !email ? ' is-invalid' : '')} />
+                    {submitted && !email &&
+                        <div className="invalid-feedback">Email Id is required</div>
                     }
                 </div>
                 <div className="form-group">
