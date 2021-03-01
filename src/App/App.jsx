@@ -20,7 +20,7 @@ function App() {
     }, []);
 
     return (
-        <div className="jumbotron jumbotron-fluid">
+        <div>
                     {alert.message &&
                         <div className={`alert ${alert.type}`}>{alert.message}</div>
                     }

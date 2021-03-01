@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { userActions } from '../_actions'
 import NavigationBar from './NavigationBar';
 import './HomePage.css'
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
+import Accounts from '../Pages/Accounts';
+import Goals from '../Pages/Goals';
+import Stats from '../Pages/Stats';
+import Transactions from '../Pages/Transactions';
+import Leaderboard from '../Pages/Leaderboard';
+import Header from './Header'
 
 function HomePage() {
     const user = useSelector(state => state.authentication.user);
@@ -19,28 +24,20 @@ function HomePage() {
     // }
 
     return (
-        // <div className="col-lg-8 offset-lg-2">
-        //     <h1>Hi {user.firstName}!</h1>
-        //     <p>
-        //         <Link to="/login">Logout</Link>
-        //     </p>
+
+        <>
         
-        // </div>
-        <div id="wrapper">
-      <div class="header">
-        <p>
-          SavEd
-        </p>
-      </div>
-      <div>
-      <div class="leftpanel">
-      <NavigationBar/>
-      </div>
-      <div class="rightpanel">
-        Data
-      </div>
-      </div>
-    </div>
+        <Router>
+        <NavigationBar />
+        <Switch>
+          <Route path='/accounts' exact component={Accounts}/>
+          <Route path='/goals' component={Goals}/>
+          <Route path='/stats' component={Stats}/>
+          <Route path='/transactions' render={(props) => <Transactions userid={user.id}/>}/>
+          <Route path='/leaderboard' component={Leaderboard}/>
+        </Switch>
+        </Router>
+        </>
     );
 }
 
