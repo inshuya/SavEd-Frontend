@@ -7,6 +7,7 @@ import { PrivateRoute } from '../_components';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+import Header from './Header';
 
 function App() {
     const alert = useSelector(state => state.alert);
@@ -21,10 +22,12 @@ function App() {
 
     return (
         <div>
+                    <Router history={history}>
+                    <Header/>
                     {alert.message &&
                         <div className={`alert ${alert.type}`}>{alert.message}</div>
                     }
-                    <Router history={history}>
+                    
                         <Switch>
                             <PrivateRoute exact path="/" component={HomePage} />
                             <Route path="/login" component={LoginPage} />

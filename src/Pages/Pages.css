@@ -7,7 +7,7 @@
   font-family: 'Lato', sans-serif;
 }
 
-.goals, .transactions, .accounts, .leaderboard, .stats{
+.goals, .transactions, .accounts, .expense, .savings{
   display: flex;
   height: 90vh;
   align-items: center;

@@ -66,12 +66,12 @@
   }
 
   .header {
-    background: #333;
+    background:#A4D279;
     padding: 5px;
     text-align:center;
-    font-size: 15px;
-    color: #fff;
-    
+    font-size: 10px;
+    color: black;
+    height: 10vh;
   }
 
   .header-right {

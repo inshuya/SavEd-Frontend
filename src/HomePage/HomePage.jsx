@@ -25,17 +25,26 @@ function HomePage() {
     return (
 
         <>
+        <div class="container" style={{marginLeft:'0px', paddingLeft:'0px', marginRight:'0px', paddingRight:'0px',maxWidth:'100%'}}>
+          <div class="row">
+            <Router>
+            <div class="col-3">
+            <NavigationBar />
+            </div>
+            <div class="col-9">
+            <Switch>
+              <Route path='/' exact component={Goals}/>  
+              <Route path='/accounts' component={Accounts}/>
+              <Route path='/goals' component={Goals}/>
+              <Route path='/savings' component={Savings}/>
+              <Route path='/transactions' render={(props) => <Transactions userid={user.id}/>}/>
+              <Route path='/expense' render={(props) => <Expense userid={user.id}/>}/>
+            </Switch>
+            </div>
+            </Router>
+          </div>
+        </div>
         
-        <Router>
-        <NavigationBar />
-        <Switch>
-          <Route path='/accounts' exact component={Accounts}/>
-          <Route path='/goals' component={Goals}/>
-          <Route path='/savings' component={Savings}/>
-          <Route path='/transactions' render={(props) => <Transactions userid={user.id}/>}/>
-          <Route path='/expense' component={Expense}/>
-        </Switch>
-        </Router>
         </>
     );
 }

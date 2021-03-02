@@ -15,41 +15,9 @@ function NavigationBar() {
     const user = useSelector(state => state.authentication.user);
     return (
       <>
-      <IconContext.Provider value={{color: 'red'}}>
-      <div className='header'>
-            <table>
-                <tbody width="100%">
-                <tr>
-                    <td width = "20%">
-                    <div className="navbar">
-                    <Link to="#" className='menu-bars'>
-                      <FaIcons.FaBars onClick={showSidebar}/>
-                    </Link>
-                  </div>
-                    </td>
-                    <td width = "60%">
-                    <h1>SavED</h1>
-                    </td>
-                    <td width = "20%">
-                    <div className='header-right'>
-                        <span>Hi {user.firstName}!</span>
-                        <span>
-                            <Link to="/login">Logout</Link>
-                        </span>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-      
-      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+      <IconContext.Provider value={{color: 'black'}}>
+      <nav className={'nav-menu active'}>
         <ul className='nav-menu-items' onClick={showSidebar}>
-          <li className="navbar-toggle">
-            <Link to="#" className='menu-bars'>
-            <AiIcons.AiOutlineClose/>
-            </Link>
-          </li>
           {NavbarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
