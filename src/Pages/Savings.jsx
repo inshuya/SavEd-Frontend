@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Stats() {
+function Savings() {
     return(
         <div className='stats'>
             <h1>Stats</h1>
@@ -8,4 +8,4 @@ function Stats() {
     )
 }
 
-export default Stats;
+export default Savings;

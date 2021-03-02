@@ -1,18 +1,11 @@
 import React from 'react';
 import * as GiIcons from "react-icons/gi";
-import * as BiIcons from "react-icons/bi";
 
 export const NavbarData = [
     {
         title: 'Accounts',
         path: '/accounts',
-        icon: <GiIcons.GiStairsGoal />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Budget Stats',
-        path: '/stats',
-        icon: <BiIcons.BiStats />,
+        icon: <GiIcons.GiBank />,
         cName: 'nav-text'
     },
     {
@@ -22,13 +15,19 @@ export const NavbarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Leaderboard',
-        path: '/leaderboard',
-        icon: <GiIcons.GiPodiumWinner />,
+        title: 'Expense Report',
+        path: '/expense',
+        icon: <GiIcons.GiExpense />,
         cName: 'nav-text'
     },
     {
-        title: 'Goals',
+        title: 'Savings Report',
+        path: '/savings',
+        icon: <GiIcons.GiPiggyBank />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Set Goals',
         path: '/goals',
         icon: <GiIcons.GiStairsGoal />,
         cName: 'nav-text'

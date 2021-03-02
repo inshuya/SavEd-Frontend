@@ -6,10 +6,9 @@ import './HomePage.css'
 import {BrowserRouter as Router,Switch, Route} from 'react-router-dom';
 import Accounts from '../Pages/Accounts';
 import Goals from '../Pages/Goals';
-import Stats from '../Pages/Stats';
+import Savings from '../Pages/Savings';
 import Transactions from '../Pages/Transactions';
-import Leaderboard from '../Pages/Leaderboard';
-import Header from './Header'
+import Expense from '../Pages/Expense';
 
 function HomePage() {
     const user = useSelector(state => state.authentication.user);
@@ -32,9 +31,9 @@ function HomePage() {
         <Switch>
           <Route path='/accounts' exact component={Accounts}/>
           <Route path='/goals' component={Goals}/>
-          <Route path='/stats' component={Stats}/>
+          <Route path='/savings' component={Savings}/>
           <Route path='/transactions' render={(props) => <Transactions userid={user.id}/>}/>
-          <Route path='/leaderboard' component={Leaderboard}/>
+          <Route path='/expense' component={Expense}/>
         </Switch>
         </Router>
         </>
