@@ -1,6 +1,10 @@
 // array in local storage for registered users
-let users = JSON.parse(localStorage.getItem('users')) || [];
-    
+let users = [];
+if(typeof window !== 'undefined')
+    {
+        users = JSON.parse(localStorage.getItem('users')) || [];
+    }
+
 export function configureFakeBackend() {
     let realFetch = window.fetch;
     window.fetch = function (url, opts) {
@@ -54,8 +58,10 @@ export function configureFakeBackend() {
                 // assign user id and a few other properties then save
                 user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
                 users.push(user);
+                if(typeof window !== 'undefined')
+                {
                 localStorage.setItem('users', JSON.stringify(users));
-
+                }
                 return ok();
             }
     
@@ -69,7 +75,10 @@ export function configureFakeBackend() {
                 if (!isLoggedIn()) return unauthorized();
     
                 users = users.filter(x => x.id !== idFromUrl());
+                if(typeof window !== 'undefined')
+                {
                 localStorage.setItem('users', JSON.stringify(users));
+                }
                 return ok();
             }
 

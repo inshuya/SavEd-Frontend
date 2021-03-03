@@ -22,15 +22,20 @@ function login(email, password) {
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
+            if(typeof window !== 'undefined')
+            {
             localStorage.setItem('user', JSON.stringify(user));
-
+            }
             return user;
         });
 }
 
 function logout() {
     // remove user from local storage to log user out
+    if(typeof window !== 'undefined')
+    {
     localStorage.removeItem('user');
+    }
 }
 
 function getAll() {
