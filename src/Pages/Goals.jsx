@@ -2,9 +2,7 @@ import React from 'react';
 
 function Goals() {
     return(
-        <div className='goals'>
-            <h1>Goals</h1>
-        </div>
+        <div class="text-center">Budget Setup Page - Coming Soon!</div>
     )
 }
 

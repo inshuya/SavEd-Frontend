@@ -26,9 +26,10 @@ generate_row_html(tran_data) {
     dt.toString
     tran_html.push(<tr>
                     <td>{tran_data[id].account_number}</td>
-                    <td> {tran_data[id].transaction_name}</td>
-                    <td> {tran_data[id].category} </td>
                     <td> {dt.toString()}</td>
+                    <td> {tran_data[id].transaction_name}</td>
+                    <td> {tran_data[id].category_name} </td>
+                    <td> {'$ '+tran_data[id].amount} </td>
                     </tr>);
   }
   return tran_html;
@@ -91,10 +92,11 @@ all_trans() {
     return ( <div> <Table striped bordered hover>
       <thead>
     <tr>
-      <th>Account Number</th>
+    <th>Account Number</th>
+      <th>Date and Time</th>
       <th>Transaction Details</th>
       <th>Category</th>
-      <th>Date and Time</th>
+      <th>Amount</th>
     </tr>
   </thead> <tbody>{this.state.tran_rows} </tbody> </Table></div> )
 }
@@ -103,10 +105,11 @@ all_bills() {
   return ( <div> <Table striped bordered hover> 
   <thead>
     <tr>
-      <th>Account Number</th>
+    <th>Account Number</th>
+      <th>Date and Time</th>
       <th>Transaction Details</th>
       <th>Category</th>
-      <th>Date and Time</th>
+      <th>Amount</th>
     </tr>
   </thead> <tbody>{this.state.bill_rows} </tbody> </Table></div> )
 }
@@ -116,9 +119,10 @@ all_income() {
   <thead>
     <tr>
       <th>Account Number</th>
+      <th>Date and Time</th>
       <th>Transaction Details</th>
       <th>Category</th>
-      <th>Date and Time</th>
+      <th>Amount</th>
     </tr>
   </thead><tbody>{this.state.income_rows} </tbody> </Table></div> )
 }

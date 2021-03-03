@@ -2,9 +2,7 @@ import React from 'react';
 
 function Accounts() {
     return(
-        <div className='accounts'>
-            <h1>Accounts</h1>
-        </div>
+        <div class="text-center">Accounts Setup Page - Coming Soon!</div>
     )
 }
 

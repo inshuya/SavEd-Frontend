@@ -31,7 +31,7 @@ function HomePage() {
             <div class="col-3">
             <NavigationBar />
             </div>
-            <div class="col-9">
+            <div class="col-9" >
             <Switch>
               <Route path='/' exact component={Goals}/>  
               <Route path='/accounts' component={Accounts}/>

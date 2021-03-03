@@ -10,9 +10,15 @@
 
   .header {
     background:#A4D279;
-    padding: 5px;
-    text-align:center;
-    font-size: 10px;
     color: black;
-    height: 10vh;
+  }
+
+  .name {
+    font-size:8vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  .header-right {
+    font-size: 4vh;
   }
