@@ -21,7 +21,6 @@ function App() {
     }, []);
 
     return (
-        <div>
                     <Router history={history}>
                     <Header/>
                     {alert.message &&
@@ -35,7 +34,6 @@ function App() {
                             <Redirect from="*" to="/" />
                         </Switch>
                     </Router>
-        </div>
     );
 }
 
