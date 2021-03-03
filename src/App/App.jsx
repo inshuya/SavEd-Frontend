@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
@@ -28,7 +28,7 @@ function App() {
                     }
                     
                         <Switch>
-                            <PrivateRoute exact path="/" component={HomePage} />
+                            {/* <PrivateRoute exact path="/" component={HomePage} /> */}
                             <Route path="/login" component={LoginPage} />
                             <Route path="/register" component={RegisterPage} />
                             <Redirect from="*" to="/" />
